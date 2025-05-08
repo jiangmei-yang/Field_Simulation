@@ -1,10 +1,9 @@
 ! 9x9pixel_43um_31cm_response_v2b.sif
+!
 ! Author: Jiangmei Yang; Contact: jyangdr@connect.ust.hk
+!
 ! ElmerSolver input file for LArPix Electric field.
-!
-! This is a modified version of "elstatics.sif" from the Elmer tutorials.
-! (see ElmerTutorials manual, Tutorial 14)
-!
+
 Check Keywords Warn
 
 ! Specify output folder and location.
