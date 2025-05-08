@@ -75,7 +75,7 @@ An example implementation can be found in this interactive notebook:
         - Run `ElmerSolver <solver_input_file>.sif` (both <electric_field>.sif and <weighting_field.sif>) in the parent directory to the Elmer mesh files;
         - This will create the calculated field files `.result`; the `.result` file must have the same name as the directory
 
-4. ### **View field and calculate induced current**
+4. ### **View fields and calculate the induced current**
    
   
 
