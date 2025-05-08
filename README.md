@@ -1,11 +1,11 @@
-### Field Simulation for LArPix
+## Field Simulation for LArPix
 
 This field simulation was developed for **LArPix**, a pixelated readout system for the **Liquid Argon Time Projection Chamber (LArTPC)**.
 
 The field simulation is based on **Garfield++**, a toolkit for the simulation of particle detectors.  
 Further details about Garfield++ can be found at: [Garfield++ Website](https://garfieldpp.web.cern.ch/garfieldpp/)
 
-#### **Finite Element Method (FEM)**
+### **Finite Element Method (FEM)**
 
 The finite-element field maps were calculated using **Elmer** and **Gmsh**.  
 Learn more at: [Garfield++ Elmer Examples](https://garfieldpp.web.cern.ch/garfieldpp/examples/elmer/)
@@ -15,16 +15,16 @@ For detailed instructions on generating finite-element field maps using the mesh
 
 These instructions also explain how to use the field maps for electron transport simulations in Garfield++.
 
-#### **Interactive Example**
+### **Interactive Example**
 
 An example implementation can be found in this interactive notebook:  
 [Garfield FEM Notebook](https://colab.research.google.com/github/jerenner/garfieldfem/blob/master/garfield_FEM.ipynb)
 
 ---
 
-### Steps to Build the Field Simulation
+## Steps to Build the Field Simulation
 
-1. **Install Softwares**
+1. ### **Install Softwares**
      - **Gmsh**: [https://gmsh.info](https://gmsh.info)  
        Used for defining our detector geometry and creating a finite element mesh.
      - **Elmer**: [http://www.elmerfem.org](http://www.elmerfem.org)  
@@ -62,23 +62,20 @@ An example implementation can be found in this interactive notebook:
        Used for detector simulation.
 
 
-2. **Construct the Geometry**  
-   - The LArPix geometry was created using CAD software.  
-   - It is imported as a `.step` file into the `.geo` file format
-   - The detector (2x2 detector in this example) is build in the `.geo` directly
-   - **Mesh Geometry**
-   - Convert `.geo` to `.msh` file
-   - Run `gmsh <geometry_file>.geo -3 -order 2`
+2. ### **Construct the Geometry**  
+   - The LArPix geometry was created using CAD software; it was imported as a `.step` file into the `.geo` file format; the detector (2x2 detector in this example) was build in the `.geo` directly
+   - **Convert `.geo` to `.msh` file**
+        - Run `gmsh <geometry_file>.geo -3 -order 2`
 
-3. **Calculate the Fields**
-   - Convert `.msh` to Elmer mesh files
-   - Run `ElmerGird 14 2 <mesh_file>.msh`
-   - This will create a directly containing `mesh.boundary``mesh.elements``mesh.header``mesh.nodes`
+3. ### **Calculate the Fields**
+   - **Convert `.msh` to Elmer mesh files**
+        - Run `ElmerGird 14 2 <mesh_file>.msh`
+        - This will create a directly containing `mesh.boundary; mesh.elements; mesh.header; mesh.nodes`
    - **Calculate Electric Field and Weighting Field**
-   - Run `ElmerSolver <solver_input_file>.sif` (both <electric_field>.sif and <weighting_field.sif> in the parent directory to the Elmer mesh files;
-   - This will create the calculated field files `.result`; the `.result` file must have the same name as the directory
+        - Run `ElmerSolver <solver_input_file>.sif` (both <electric_field>.sif and <weighting_field.sif>) in the parent directory to the Elmer mesh files;
+        - This will create the calculated field files `.result`; the `.result` file must have the same name as the directory
 
-4. **View field and generate induced current**
+4. ### **View field and calculate induced current**
    
   
 
