@@ -1,6 +1,6 @@
 ! 9x9pixel_43um_31cm_response_v2b.sif
-!
-! ElmerSolver input file for parallel plate geometry.
+! Author: Jiangmei Yang; Contact: jyangdr@connect.ust.hk
+! ElmerSolver input file for LArPix Electric field.
 !
 ! This is a modified version of "elstatics.sif" from the Elmer tutorials.
 ! (see ElmerTutorials manual, Tutorial 14)

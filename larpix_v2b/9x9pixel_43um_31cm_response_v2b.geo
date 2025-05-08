@@ -1,3 +1,7 @@
+// 9x9pixel_43um_31cm_response_v2b.geo
+// Author: Jiangmei Yang; Contact: jyangdr@connect.ust.hk
+// Gmsh input file for LArPix and Detector Geometry.
+
 SetFactory("OpenCASCADE");
 Merge "9x9pixel_3.87975.step";
 // Create the counters.
