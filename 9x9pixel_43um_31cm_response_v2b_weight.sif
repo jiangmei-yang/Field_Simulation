@@ -1,0 +1,99 @@
+! 9x9pixel_43um_31cm_response_v2b_weight.sif
+!
+! ElmerSolver input file for parallel plate geometry.
+!
+! This is a modified version of "elstatics.sif" from the Elmer tutorials.
+! (see ElmerTutorials manual, Tutorial 14)
+!
+Check Keywords Warn
+
+! Specify output folder and location.
+Header
+  Mesh DB "." "9x9pixel_43um_31cm_response_v2b"
+End
+
+! Details of the calculation and output files.
+Simulation
+  Coordinate System = Cartesian 3D
+  Simulation Type = Steady State
+  Steady State Max Iterations = 1
+  Output File = "9x9pixel_43um_31cm_response_v2b_weight.result"
+End
+
+! Define constants.
+Constants
+  Permittivity Of Vacuum = 8.8542e-12
+End
+
+! Specify equation and material for the pixels
+Body 1
+  Name = "Pixels"
+  Target Bodies(81) = 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81
+  Equation = 1
+  Material = 1
+End
+
+Body 2
+  Name = "LAr"
+  Target Bodies(1) = 82
+  Equation = 1
+  Material = 2
+End
+
+! Specify equation and material for the FR4
+Body 3
+  Name = "FR4"
+  Target Bodies(1) = 83
+  Equation = 1
+  Material = 3
+End
+
+! Define the pixel material.
+Material 1
+  Relative Permittivity = 1e10
+End
+
+! Define the LAr material.
+Material 2
+  Relative Permittivity = 1.53
+End
+
+! Define the FR4 material
+Material 3
+  Relative Permittivity = 4.4
+End
+
+! Readout
+Boundary Condition 1
+  Target Boundaries = 1
+  Potential = 1
+End
+
+! Other Electrodes
+Boundary Condition 2
+  Target Boundaries(81) = 2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82
+  Potential = 0
+End
+
+! Details of the calculation procedure: all that must
+! be calculated is the potential.
+Equation 1
+  Active Solvers(1) = 1
+  Calculate Electric Energy = True
+End
+
+Solver 1
+  Equation = Stat Elec Solver
+  Variable = Potential
+  Variable DOFs = 1
+  Procedure = "StatElecSolve" "StatElecSolver"
+  Calculate Electric Field = True
+  Calculate Electric Flux = False
+  Linear System Solver = Iterative
+  Linear System Iterative Method = BiCGStab
+  Linear System Max Iterations = 100000
+  Linear System Abort Not Converged = True
+  Linear System Convergence Tolerance = 1.0e-10
+  Linear System Preconditioning = ILU1
+  Steady State Convergence Tolerance = 5.0e-7
+End
