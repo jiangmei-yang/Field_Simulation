@@ -76,6 +76,7 @@ An example implementation can be found in this interactive notebook:
         - This will create the calculated field files `.result`; the `.result` file must have the same name as the directory
 
 4. ### **View fields and calculate the induced current**
+   - LArPix field response simulation code can be found in the larpix_v2b/field_response_simulation.ipynb
    
   
 
