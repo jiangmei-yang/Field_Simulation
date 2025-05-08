@@ -27,8 +27,8 @@ An example implementation can be found in this interactive notebook:
 ### Steps to Build the Field Simulation
 
 1. **Install Gmsh**  
-   Install the Gmsh software to enable geometry creation and meshing.
+
 
 2. **Construct Geometry**  
    - The LArPix geometry was created using CAD software.  
-   - It is imported as a `.step` file into the `.geo` file format for further processing.
+   - It is imported as a `.step` file into the `.geo` file format
