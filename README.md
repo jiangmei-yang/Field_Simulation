@@ -72,7 +72,7 @@ An example implementation can be found in this interactive notebook:
         - Run `ElmerGird 14 2 <mesh_file>.msh`
         - This will create a directly containing `mesh.boundary; mesh.elements; mesh.header; mesh.nodes`
    - **Calculate Electric Field and Weighting Field**
-        - Run `ElmerSolver <solver_input_file>.sif` (both <electric_field>.sif and <weighting_field.sif>) in the parent directory to the Elmer mesh files (The folder location is specified in the `.sif`;
+        - Run `ElmerSolver <solver_input_file>.sif` (both <electric_field>.sif and <weighting_field.sif>) in the parent directory to the Elmer mesh files (The folder location is specified in the `.sif`);
         - This will create the calculated field files `.result`; the `.result` will be generated in the same folder as the Elmer mesh files.
 
 4. ### **View fields and calculate the induced current**
